@@ -1,0 +1,58 @@
+{
+  "type": "conversation",
+  "name": "test_full_payment_close",
+  "agent_id": "agent_0901kx61mf5xf8fayvqyn7pgh2tc",
+  "description": "Test that agent calls negotiate_calc when consumer offers full payment",
+  "conversation": [
+    {
+      "role": "agent",
+      "content": "Hi, this is Dani from Accord."
+    },
+    {
+      "role": "user",
+      "content": "Hi Dani."
+    },
+    {
+      "role": "agent",
+      "content": "This call may be recorded for quality purposes. Is that alright with you? This call is an attempt to collect a debt."
+    },
+    {
+      "role": "user",
+      "content": "Yes, you can record."
+    },
+    {
+      "role": "agent",
+      "content": "Thank you. May I have your full name and date of birth to verify your identity?"
+    },
+    {
+      "role": "user",
+      "content": "My name is John Smith, born June 15, 1985."
+    },
+    {
+      "role": "agent",
+      "content": "Thank you John. For security, what are the last 4 digits of your phone number?"
+    },
+    {
+      "role": "user",
+      "content": "5234"
+    },
+    {
+      "role": "agent",
+      "content": "Perfect. You have a balance of $3,500. What can you pay today?"
+    },
+    {
+      "role": "user",
+      "content": "I can pay the full $3,500 right now."
+    }
+  ],
+  "assertions": [
+    {
+      "type": "tool_call",
+      "tool_name": "negotiate_calc",
+      "parameters": {
+        "consumer_offer": 3500,
+        "attempt_no": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+collect-tools/node_modules/
+
+# Build outputs
+dist/
+collect-tools/dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test outputs
+/tmp/
+*.tmp
+test-results.txt
+TEST_RESULTS_*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Misc
+*.bak
+*.orig
+.history/
+VIDEO_SCRIPT.txt
+sync.sh

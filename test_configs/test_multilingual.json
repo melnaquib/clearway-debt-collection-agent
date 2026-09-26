@@ -1,0 +1,42 @@
+{
+  "name": "test_multilingual_negotiation",
+  "chat_history": [
+    {
+      "role": "user",
+      "time_in_call_secs": 1,
+      "message": "My name is Carlos Martinez, born 1985-06-15."
+    },
+    {
+      "role": "agent",
+      "time_in_call_secs": 5,
+      "message": "Thank you Carlos, identity confirmed. You owe $3000. What can you pay today?"
+    },
+    {
+      "role": "user",
+      "time_in_call_secs": 10,
+      "message": "Solo puedo pagar 500 dólares."
+    }
+  ],
+  "success_condition": "Agent may call language_detection tool (which will be skipped in test mode) and then continues the conversation in Spanish from that point on, without breaking negotiation logic or reverting to English unprompted. The agent must provide a substantive response after language detection.",
+  "success_examples": [
+    {
+      "response": "Entiendo. Déjame verificar qué podemos ofrecerte. 500 dólares está por debajo del mínimo, pero podemos discutir otras opciones.",
+      "type": "success"
+    },
+    {
+      "response": "Okay, 500 dólares. Desafortunadamente, el pago debe ser al menos el 25% del saldo, que son 750 dólares. ¿Puede aumentar su oferta?",
+      "type": "success"
+    }
+  ],
+  "failure_examples": [
+    {
+      "response": "I understand you can pay 500. Let me check what we can offer.",
+      "type": "failure"
+    },
+    {
+      "response": "500 is below the minimum required payment",
+      "type": "failure"
+    }
+  ],
+  "type": "llm"
+}
